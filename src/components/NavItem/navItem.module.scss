@@ -1,0 +1,38 @@
+@import '../../styles/generic';
+@import '../../styles/breakpoint';
+
+.navItem {
+    color: $color-primary-light;
+    font-size: to-rem(15);
+    width: 100%;
+    display: flex;
+    padding: to-rem(13 25);
+    margin-bottom: to-rem(16);
+    align-items: center;
+    transition: background-color .25s linear;
+
+    @include md {
+        padding: to-rem(13);
+    }
+
+    svg {
+        fill: $color-primary-light;
+        margin-right: to-rem(15);
+    }
+
+    &Active,
+    &:hover {
+        background-color: $color-primary-dark-01;
+        border-radius: to-rem(5);
+        color: $color-white;
+        font-weight: var(--font-medium);
+
+        svg {
+            fill: $color-white;
+
+            path {
+                fill: $color-white;
+            }
+        }
+    }
+}

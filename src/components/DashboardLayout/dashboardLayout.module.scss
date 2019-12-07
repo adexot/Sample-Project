@@ -1,0 +1,427 @@
+@import '../../styles/generic';
+@import '../../styles/breakpoint';
+
+.dashboard {
+  &Container {
+    width: 100%;
+    height: 100%;
+    background-color: $color-dashboard-bg;
+
+    @include md {
+      display: flex;
+      height: 100vh;
+      overflow-y: hidden;
+    }
+  }
+}
+
+.sideNav {
+  background-color: $color-primary;
+  height: 100%;
+  color: $color-white;
+  position: relative;
+  overflow-y: auto;
+
+  @include md {
+    width: 100%;
+    height: 100%;
+  }
+
+  &Container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: transform 0.25s linear;
+    background-color: rgba(89, 89, 89, 0.8);
+    z-index: 99;
+    display: grid;
+    grid-template-columns: 80% auto;
+
+    @include md {
+      position: relative;
+      width: to-rem(400);
+      height: 100%;
+      transform: translateX(0);
+      display: block;
+    }
+
+    &>svg {
+      display: none;
+    }
+  }
+
+  .topSection {
+    width: 100%;
+    background-color: $color-primary-dark;
+    padding: to-rem(20);
+
+    @include md {
+      padding: to-rem(30 35 30 80);
+    }
+  }
+
+  .brandName {
+    margin-bottom: to-rem(40);
+  }
+
+  .navSection {
+    padding: to-rem(0);
+
+    @include md {
+      padding: to-rem(30 35 0 80);
+    }
+  }
+}
+
+.logoutButton {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: to-rem(15 25);
+  text-align: center;
+  display: block;
+  width: 100%;
+  font-size: to-rem(15);
+  background: transparent;
+  color: $color-primary-light;
+  border: 0;
+  border-top: 1px solid $color-primary-dark-01;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  @include md {
+    padding: to-rem(15 13);
+  }
+
+  svg {
+    fill: $color-primary-light;
+    margin-right: to-rem(15);
+  }
+
+  &:hover {
+    background-color: $color-primary-dark-01;
+    color: $color-white;
+
+    svg {
+      fill: $color-white;
+
+      path {
+        fill: $color-white;
+      }
+    }
+  }
+
+  @include md {
+    padding: to-rem(15 35 15 92);
+  }
+
+  @include sm {
+    position: relative;
+  }
+}
+
+.open {
+  transform: translateX(0);
+}
+
+.navBackDrop {
+  position: relative;
+
+  &>svg {
+    position: absolute;
+    top: to-rem(25);
+    right: to-rem(11);
+    display: block;
+  }
+}
+
+.agent {
+  &Info {
+    display: flex;
+    align-items: center;
+  }
+
+  &Avatar {
+    width: 25%;
+  }
+
+  &Details {
+    padding: to-rem(15 0);
+    // border-bottom: to-rem(1) solid $color-primary-dark-01;
+    width: 75%;
+    font-size: to-rem(13);
+
+    &>div {
+      color: $color-primary-light;
+      margin-bottom: to-rem(10);
+    }
+  }
+}
+
+.fundWallet {
+  &Button {
+    display: block;
+    padding: to-rem(0 15);
+    height: to-rem(40);
+    border: to-rem(1) solid $color-green-light;
+    background: transparent;
+    color: $color-green-light;
+    font-size: to-rem(14);
+    border-radius: to-rem(25);
+    width: 100%;
+    text-align: left;
+    margin-top: to-rem(15);
+    position: relative;
+    transition: background-color 0.1s ease-in-out;
+
+    svg {
+      position: absolute;
+      right: to-rem(15);
+
+      path {
+        fill: $color-green-light;
+      }
+    }
+
+    &:hover {
+      background-color: $color-green-light;
+      color: $color-primary;
+
+      svg {
+        path {
+          fill: $color-primary;
+        }
+      }
+    }
+  }
+
+  &Header {
+    background-color: #f0f4f9;
+  }
+
+  &Content {
+    padding: 0;
+  }
+
+  &Balance {
+    border-bottom: to-rem(1) solid #f0f4f9;
+    color: #efa310;
+    padding: to-rem(20);
+
+    @include md {
+      padding: to-rem(30 50 20);
+    }
+  }
+
+  &Tab {
+    background-color: #f0f4f9;
+    list-style: none;
+    padding: to-rem(0 30);
+    border-top: to-rem(1) solid #dee6f2;
+  }
+
+  &Body {
+    padding: to-rem(20);
+
+    @include md {
+      padding: to-rem(20 50);
+    }
+  }
+
+  &Action {
+    display: flex;
+    justify-content: space-between;
+    margin-top: to-rem(30);
+  }
+}
+
+.mainContainer {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  position: absolute;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  top: 0;
+  left: 0;
+  background: inherit;
+
+  @include md {
+    padding: to-rem(35 50);
+    overflow-y: scroll;
+    position: unset;
+    display: block;
+  }
+
+  &Content {
+    overflow: auto;
+  }
+}
+
+.pageHeader {
+  font-size: to-rem(25);
+  text-transform: capitalize;
+  margin-bottom: to-rem(45);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobileNav {
+  background-color: $color-primary;
+  text-align: center;
+  color: $color-white;
+  font-size: to-rem(20);
+  text-transform: capitalize;
+  padding: to-rem(18 0);
+  position: relative;
+
+  &>svg {
+    position: absolute;
+    top: 50%;
+    left: to-rem(20);
+    transform: translateY(-50%);
+  }
+}
+
+// FIXME: prepend input to add more specificity to the class
+input.input {
+  background-color: $color-white;
+  border: to-rem(1) solid #d2ddeb;
+  border-radius: to-rem(3);
+  color: $color-black-01;
+}
+
+.submitButton {
+  width: 100%;
+
+  @include md {
+    max-width: to-rem(194);
+  }
+}
+
+.cancelButton {
+  display: none;
+
+  @include md {
+    display: inline-block;
+    font-size: to-rem(13);
+    color: #18379a;
+
+    &>svg {
+      vertical-align: middle;
+      margin-right: to-rem(10);
+    }
+  }
+}
+
+.cardSelection {
+  font-size: to-rem(14);
+
+  &Header {
+    display: flex;
+    justify-content: space-between;
+    margin: to-rem(40 0 15);
+  }
+
+  .addCard {
+    color: #0f8cff;
+
+    svg {
+      vertical-align: middle;
+      margin-right: to-rem(5);
+
+      path {
+        fill: #0f8cff;
+      }
+    }
+  }
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: to-rem(15);
+}
+
+.bordered {
+  border: to-rem(1) solid #d2ddeb;
+  border-radius: to-rem(3);
+  margin-bottom: to-rem(15);
+}
+
+.radioBox {
+  font-size: to-rem(13);
+
+  @include sm {
+    padding: to-rem(20);
+  }
+
+  &Item {
+    @extend .flexContainer,
+    .bordered;
+  }
+
+  &Label {
+    margin-left: to-rem(10);
+  }
+}
+
+.cardImage {
+  height: to-rem(20);
+}
+
+.kudiPin {
+  .previous {
+    background-color: #f0f4f9;
+    border-top: to-rem(1) solid #dee6f2;
+
+    &>button {
+      padding: to-rem(15 0);
+      margin-left: to-rem(20);
+      font-size: to-rem(13);
+      color: #0f8cff;
+
+      svg {
+        margin-right: to-rem(5);
+        vertical-align: middle;
+        height: to-rem(12);
+        transform: translateY(-10%);
+      }
+
+      @include md {
+        margin-left: to-rem(50);
+      }
+    }
+  }
+
+  &Body {
+    padding: to-rem(20);
+
+    @include md {
+      padding: to-rem(30 50);
+    }
+  }
+}
+
+.topup {
+  text-align: center;
+  margin-top: to-rem(100);
+
+  .continueButton {
+    background-color: transparent;
+    border: to-rem(1) solid #18379a;
+    max-width: to-rem(150);
+    margin-top: to-rem(50);
+  }
+
+  &Header {
+    color: #18379a;
+  }
+}

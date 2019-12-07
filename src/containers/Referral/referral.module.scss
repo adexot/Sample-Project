@@ -1,0 +1,346 @@
+@import '../../styles/generic';
+
+.referral {
+  width: 100%;
+  height: 100%;
+
+  &Flex {
+    display: flex;
+    min-height: 80vh;
+    border-radius: to-rem(5);
+    overflow: hidden;
+  }
+}
+
+.mobileTab {
+  display: flex;
+  width: 100%;
+  background-color: $color-primary-dark;
+  padding: to-rem(0 15);
+
+  & > li {
+    width: 50%;
+    text-align: center;
+    color: $color-primary-light;
+    font-size: to-rem(14);
+  }
+
+  .tabItem {
+    color: $color-primary-light;
+    font-size: to-rem(15);
+    width: 100%;
+    display: block;
+    padding: to-rem(13);
+    text-align: center;
+  }
+
+  .tabActive {
+    border-bottom: to-rem(3) solid $color-green-light;
+    color: $color-green-light;
+  }
+}
+
+.list {
+  &Action {
+    width: 100%;
+    background-color: $color-white;
+    padding: to-rem(15);
+
+    @include sm {
+      display: flex;
+      flex: 1 1 50%;
+    }
+
+    & > button {
+      display: block;
+      width: 100%;
+    }
+
+    @include md {
+      width: auto;
+      padding: 0;
+      padding: to-rem(10 0);
+
+      div {
+        display: inline-block;
+      }
+    }
+
+    .inviteFilterButton {
+      display: flex;
+      justify-content: space-between;
+      border: 0;
+      border-left: to-rem(1) solid $color-dashboard-bg;
+      background-color: $color-white;
+
+      span {
+        margin-left: to-rem(20);
+        text-transform: capitalize;
+      }
+
+      & > svg {
+        path {
+          fill: #748cad;
+        }
+
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &Column {
+    width: 70%;
+    background-color: $color-white;
+    font-size: to-rem(13);
+
+    &Header {
+      border-bottom: to-rem(1) solid #dee6f2;
+      padding: to-rem(0 20);
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex: 1 1 50%;
+    }
+
+    &Content {
+      padding: to-rem(20);
+    }
+  }
+
+  &Title {
+    padding: to-rem(15 0);
+  }
+}
+
+.helpText {
+  color: #748cad;
+
+  svg {
+    margin-right: to-rem(10);
+    vertical-align: middle;
+  }
+}
+
+.agentList {
+  padding: to-rem(20);
+}
+
+.agentCard {
+  background-color: $color-white;
+  margin-bottom: to-rem(20);
+  box-shadow: to-rem(0 5 10) rgba(116, 140, 173, 0.1);
+  border-radius: to-rem(3);
+}
+
+.row {
+  display: flex;
+  font-size: to-rem(13);
+  padding: to-rem(20);
+  border-bottom: to-rem(1) solid $color-dashboard-bg;
+
+  @include md {
+    flex-wrap: wrap;
+    line-height: 2.5;
+    padding: to-rem(10 0);
+  }
+}
+
+.title,
+.value {
+  width: 50%;
+  word-wrap: break-word;
+}
+
+.title {
+  color: $color-gray-02;
+}
+
+.value {
+  text-align: right;
+}
+
+.actionButton {
+  display: block;
+  width: 100%;
+  height: to-rem(46);
+  line-height: to-rem(46);
+  vertical-align: middle;
+  text-align: center;
+  background-color: #f8fbff; //make this a variable for re-usability
+  border: 0;
+  border-radius: to-rem(0 0 3 3);
+  color: #0f8cff;
+
+  svg {
+    transform: translateY(20%);
+    margin-right: to-rem(10);
+  }
+}
+
+.invite {
+  padding: to-rem(34 20);
+
+  &Column {
+    width: to-rem(333);
+    background-color: #e7eef7;
+    font-size: to-rem(13);
+
+    &Header {
+      border-bottom: to-rem(1) solid #dee6f2;
+      padding: to-rem(20);
+      text-transform: uppercase;
+    }
+
+    &Content {
+      padding: to-rem(20);
+    }
+  }
+
+  &Button {
+    height: to-rem(45);
+    width: 100%;
+    background-color: $color-green-light;
+    color: $color-primary;
+    font-size: to-rem(15);
+    text-align: left;
+    border: 0;
+    border-radius: to-rem(30);
+    padding: 0 to-rem(15);
+    position: relative;
+    cursor: pointer;
+    outline: 0;
+
+    & > svg {
+      text-align: right;
+      position: absolute;
+      right: to-rem(15);
+      transform: translateY(15%);
+    }
+  }
+}
+
+.input {
+  background-color: $color-white;
+  border: to-rem(1) solid #d2ddeb;
+  border-radius: to-rem(3);
+  color: $color-black-01;
+}
+
+%ellipse {
+  display: inline-block;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  margin-right: to-rem(5);
+  vertical-align: middle;
+}
+
+.pending {
+  @extend %ellipse;
+  background-color: #f2af4a;
+}
+
+.active {
+  @extend %ellipse;
+  background-color: #22affe;
+}
+
+.registered {
+  @extend %ellipse;
+  background-color: #17cda1;
+}
+
+.action {
+  color: #0f8cff;
+
+  & > span {
+    font-size: to-rem(13);
+  }
+
+  & > svg {
+    width: to-rem(12);
+    height: torem(12);
+    vertical-align: middle;
+    margin-right: to-rem(5);
+  }
+}
+
+.dateRange {
+  padding-right: to-rem(15);
+  border-right: to-rem(1) solid $color-dashboard-bg;
+
+  &Button {
+    background-color: $color-white;
+    border: 0;
+    padding: to-rem(7 10);
+
+    @include md {
+      border: to-rem(1) solid #d2ddeb;
+      border-radius: to-rem(3);
+    }
+
+    svg {
+      vertical-align: middle;
+      margin-right: to-rem(10);
+    }
+
+    &:hover {
+      border-color: $color-primary-light;
+    }
+  }
+}
+
+.referralSuccess {
+  padding: to-rem(10 0);
+  text-align: center;
+
+  & > svg {
+    height: to-rem(100);
+  }
+
+  .title {
+    font-size: to-rem(25);
+    line-height: to-rem(31);
+    margin: to-rem(30 0 20 0);
+    margin-left: auto;
+    margin-right: auto;
+    color: $color-primary;
+    width: initial;
+  }
+
+  .message {
+    color: $color-black-01;
+    font-size: to-rem(15);
+    line-height: to-rem(18);
+    margin: to-rem(0 40 30 40);
+  }
+
+  .continueButton {
+    color: $color-primary;
+    font-size: to-rem(14);
+    width: to-rem(150);
+    border: to-rem(1) solid $color-primary;
+    border-radius: 25px;
+    padding: to-rem(12 15);
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & > svg {
+      height: to-rwm(15);
+      width: to-rwm(15);
+      margin-right: to-rem(5);
+      vertical-align: middle;
+    }
+  }
+}
+
+.responseError {
+  width: 100%;
+  text-align: center;
+  background: #ffe8e8;
+  color: $color-red;
+  padding: to-rem(17 28);
+  margin-bottom: to-rem(20);
+}

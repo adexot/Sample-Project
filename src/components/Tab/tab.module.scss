@@ -1,0 +1,45 @@
+@import '../../styles/generic';
+
+.tab {
+  color: #748cad;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+
+  &.active,
+  &:hover {
+    color: #223856;
+
+    svg {
+      path {
+        fill: #223856;
+      }
+
+      fill: #223856;
+    }
+  }
+
+  &.active {
+    border-bottom: to-rem(2) solid #223856;
+  }
+
+  svg {
+    vertical-align: middle;
+    margin-right: to-rem(10);
+
+    path {
+      fill: #748cad;
+    }
+
+    fill: #748cad;
+  }
+
+  @include sm {
+    width: 50%;
+    padding: to-rem(15 0);
+  }
+
+  @include md {
+    padding: to-rem(15 0);
+  }
+}

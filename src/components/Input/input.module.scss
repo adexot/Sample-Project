@@ -1,0 +1,92 @@
+@import '../../styles/generic.scss';
+
+.input {
+  height: to-rem(55);
+  color: $color-white;
+  border: 0;
+  border-radius: to-rem(3);
+  width: 100%;
+  padding: to-rem(20 20 10 19);
+  box-sizing: border-box;
+  font-size: to-rem(15);
+  outline: 0;
+
+  &:placeholder-shown+label {
+    position: absolute;
+    top: 50%;
+    left: to-rem(20);
+    transform: translateY(-50%);
+    transition: top 0.1s linear;
+  }
+
+  &:not(:placeholder-shown)+label {
+    position: absolute;
+    top: to-rem(10);
+    left: to-rem(20);
+    font-size: to-rem(10);
+    color: #748cad;
+  }
+
+  &:focus {
+    border: to-rem(1) solid $color-primary-light;
+
+    &~svg {
+      display: none;
+    }
+
+    &+label {
+      top: to-rem(10);
+      font-size: to-rem(10);
+      color: #748cad;
+    }
+  }
+
+  &Label {
+    &>svg {
+      margin-left: to-rem(5);
+      vertical-align: middle;
+    }
+  }
+
+  &:disabled {
+    background-color: #f0f4f9;
+    color: #748cad;
+  }
+
+  &Box {
+    margin-bottom: to-rem(20);
+  }
+
+  &Error {
+    color: #ff5b5b;
+    margin-top: to-rem(5);
+  }
+}
+
+.inputGroup {
+  position: relative;
+
+  &.errorState>svg {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: to-rem(20);
+    transform: translateY(-50%);
+  }
+
+  &>svg {
+    display: none;
+  }
+}
+
+.secureInput {
+  -webkit-text-security: disc;
+  letter-spacing: to-rem(3);
+  font-size: to-rem(20);
+}
+
+.errorState {
+  &>input {
+    border: to-rem(1) solid $color-red;
+  }
+}

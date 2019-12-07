@@ -1,0 +1,27 @@
+@import '../../styles/generic.scss';
+
+.buttonList {
+  margin-left: to-rem(15);
+  background-color: $color-dashboard-bg;
+  border: to-rem(1) solid #d2ddeb;
+  border-radius: to-rem(3);
+
+  li {
+    display: inline-block;
+    padding: to-rem(0 10);
+    text-transform: capitalize;
+    color: #748cad;
+    line-height: to-rem(30);
+
+    &:hover,
+    &[data-active='true'] {
+      background-color: $color-white;
+      cursor: pointer;
+      color: #0f8cff;
+    }
+
+    &:not(:last-child) {
+      border-right: to-rem(1) solid #d2ddeb;
+    }
+  }
+}

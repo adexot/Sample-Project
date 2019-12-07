@@ -1,0 +1,202 @@
+@import '../../styles/generic';
+
+.login {
+  &Container {
+    color: $color-white;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+
+    @include md {
+      display: flex;
+      text-align: left;
+    }
+  }
+
+  &Area {
+    background-color: $color-primary;
+    padding: 0 to-rem(20);
+    box-sizing: border-box;
+    position: relative;
+
+    @include md {
+      padding: 30px 80px;
+    }
+  }
+
+  &Box {
+    width: 100%;
+
+    @include md {
+      max-width: to-rem(417);
+    }
+  }
+
+  &Input {
+    height: to-rem(55);
+    background-color: $color-primary-dark-01;
+    color: $color-white;
+    border: 0;
+    border-radius: to-rem(3);
+    width: 100%;
+    padding: to-rem(10 20);
+    box-sizing: border-box;
+    font-size: to-rem(15);
+    outline: 0;
+
+    &:placeholder-shown+label {
+      position: absolute;
+      top: 50%;
+      left: to-rem(20);
+      transform: translateY(-50%);
+      transition: top 0.1s linear;
+    }
+
+    &:not(:placeholder-shown)+label {
+      position: absolute;
+      top: to-rem(10);
+      left: to-rem(20);
+      font-size: to-rem(10);
+      color: $color-primary-light;
+    }
+
+    &:focus {
+      border: to-rem(1) solid $color-primary-light;
+
+      &~svg {
+        display: none;
+      }
+    }
+  }
+
+  &Action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: to-rem(15);
+
+    &>a {
+      color: $color-green-light;
+    }
+  }
+
+  &Button {
+    height: to-rem(45);
+    width: to-rem(170);
+    background-color: $color-green-light;
+    color: $color-primary;
+    font-size: to-rem(15);
+    text-align: left;
+    border: 0;
+    border-radius: to-rem(30);
+    padding: 0 to-rem(15);
+    position: relative;
+    cursor: pointer;
+    outline: 0;
+
+    &>svg {
+      text-align: right;
+      position: absolute;
+      right: to-rem(15);
+      transform: translateY(15%);
+    }
+
+    @include md {
+      width: to-rem(200);
+    }
+  }
+
+  &Image {
+    @include md {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+
+      &::before {
+        content: '';
+        background: url(./kagu-login-image.png) no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-40%);
+        width: 80%;
+        height: 80%;
+      }
+    }
+  }
+
+  &Alternative {
+    position: relative;
+    margin-top: to-rem(80);
+    padding: to-rem(30 0);
+    font-size: to-rem(15);
+    color: $color-primary-light;
+
+    &>a {
+      color: $color-green-light;
+    }
+
+    @include md {
+      text-align: center;
+      max-width: to-rem(417);
+    }
+  }
+}
+
+.brandName {
+  font-size: to-rem(40);
+  font-weight: var(--font-bold);
+  padding-top: to-rem(50);
+}
+
+.halfColumn {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: auto;
+
+  @include md {
+    width: 50%;
+  }
+}
+
+.welcomeText {
+  color: $color-primary-light;
+  margin-top: to-rem(100);
+  font-size: to-rem(24);
+  font-weight: var(--font-regular);
+}
+
+.inputGroup {
+  position: relative;
+  margin-bottom: to-rem(20);
+
+  &.errorState svg {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: to-rem(20);
+    transform: translateY(-50%);
+  }
+
+  svg {
+    display: none;
+  }
+}
+
+.secureInput {
+  -webkit-text-security: disc;
+  letter-spacing: to-rem(3);
+  font-size: to-rem(20);
+}
+
+.errorState {
+  &>input {
+    border: to-rem(1) solid $color-red;
+  }
+}

@@ -1,0 +1,617 @@
+@import '../../styles/generic';
+
+.pageTab {
+  display: flex;
+  width: 100%;
+  background-color: $color-primary-dark;
+  padding: to-rem(0 15);
+
+  &>li {
+    width: 50%;
+    text-align: center;
+    color: $color-primary-light;
+    font-size: to-rem(14);
+
+    @include md {
+      width: auto;
+    }
+  }
+
+  .tabItem {
+    color: $color-white;
+    font-size: to-rem(15);
+    width: 100%;
+    text-align: center;
+
+    @include sm {
+      height: to-rem(50);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @include md {
+      color: #223856;
+      font-size: to-rem(12);
+      padding: to-rem(5 10);
+      line-height: to-rem(20);
+      display: inline-block;
+    }
+  }
+
+  .tabActive {
+    @include md {
+      background-color: $color-white;
+      color: #0f8cff;
+      border-radius: to-rem(3);
+      box-shadow: 0px 10px 15px rgba(171, 191, 216, 0.5);
+    }
+
+    @include sm {
+      border-bottom: to-rem(3) solid $color-green-light;
+      color: $color-green-light;
+    }
+  }
+
+  @include md {
+    background-color: #e7eef7;
+    width: auto;
+    padding: to-rem(5);
+  }
+}
+
+.introText {
+  color: #748cad;
+  font-size: to-rem(15);
+  margin-bottom: to-rem(30);
+
+  @include sm {
+    text-align: center;
+    margin-top: to-rem(20);
+
+    &>span {
+      display: block;
+    }
+  }
+}
+
+.redText {
+  color: red;
+}
+
+.leftColumn {
+  width: 100%;
+
+  @include md {
+    margin-right: to-rem(30);
+    width: to-rem(320);
+  }
+}
+
+.dashboard {
+  &Flex {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+
+    @include sm {
+      flex-flow: column;
+      padding: to-rem(0 20 30);
+    }
+  }
+
+  &Chart {
+    width: 100%;
+    display: flex;
+    border-radius: to-rem(5);
+    overflow: hidden;
+    box-shadow: to-rem(0 10 20) rgba(116, 140, 173, 0.2);
+  }
+
+  &Card {
+    background-color: #fff;
+    box-shadow: to-rem(0 10 20) rgba(116, 140, 173, 0.2);
+    border-radius: to-rem(5);
+    text-align: center;
+    margin-bottom: to-rem(30);
+    font-size: to-rem(12);
+
+    &s>div:last-child {
+      margin-bottom: 0;
+    }
+
+    &Header {
+      @extend .textMedium;
+      padding: to-rem(20);
+      text-transform: uppercase;
+      border-bottom: to-rem(1) solid #f0f4f9;
+    }
+
+    &Content {
+      padding: to-rem(30 20);
+    }
+
+    &Footer {
+      padding: to-rem(15 20);
+      border-top: to-rem(1) solid #f0f4f9;
+    }
+  }
+}
+
+.desktopChart {
+  margin-top: to-rem(40);
+}
+
+.mobileChart {
+  background-color: $color-white;
+  border-radius: to-rem(5);
+  box-shadow: to-rem(0 10 20) rgba(116, 140, 173, 0.2);
+  margin-bottom: to-rem(30);
+  margin-top: to-rem(30);
+
+  &Container {
+    height: to-rem(450);
+  }
+}
+
+.list {
+  &Action {
+    width: 100%;
+    background-color: $color-white;
+    padding: to-rem(10 15);
+
+    @include sm {
+      display: flex;
+      flex: 1 1 50%;
+    }
+
+    &>button {
+      display: block;
+      width: 100%;
+    }
+
+    @include md {
+      width: auto;
+      padding: 0;
+      padding: to-rem(10 0);
+
+      div {
+        display: inline-block;
+      }
+    }
+
+    .inviteFilterButton {
+      display: flex;
+      justify-content: space-between;
+      border: 0;
+      border-left: to-rem(1) solid $color-dashboard-bg;
+      background-color: $color-white;
+
+      span {
+        margin-left: to-rem(20);
+      }
+
+      &>svg {
+        path {
+          fill: #748cad;
+        }
+
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &Column {
+    width: 100%;
+    background-color: $color-white;
+    font-size: to-rem(13);
+    position: relative;
+
+    &Header {
+      border-bottom: to-rem(1) solid #dee6f2;
+      padding: to-rem(0 20);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex: 1 1 50%;
+    }
+
+    &Content {
+      padding: to-rem(20);
+
+      .helpText {
+        text-align: center;
+        color: #748cad;
+        font-size: to-rem(13);
+        line-height: to-rem(16);
+      }
+    }
+
+    &Footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      padding: to-rem(20 30);
+      border-top: to-rem(1) solid #f0f4f9;
+      width: 100%;
+    }
+  }
+
+  &Title {
+    padding: to-rem(15 0);
+    color: #223856;
+
+    @include sm {
+      font-size: to-rem(13);
+      text-align: center;
+    }
+  }
+
+  &Table {
+    thead tr {
+      th:first-child {
+        width: 20%;
+      }
+
+      th:last-child {
+        width: 10%;
+      }
+    }
+  }
+}
+
+.keyItem {
+  display: inline-block;
+  margin-left: to-rem(35);
+}
+
+.keyIndicator {
+  display: inline-block;
+  width: to-rem(30);
+  height: to-rem(8);
+  border-radius: to-rem(3);
+  margin-right: to-rem(11.25);
+}
+
+.transferIndicator {
+  @extend .keyIndicator;
+  background-color: #e29138;
+}
+
+.withdrawalIndicator {
+  @extend .keyIndicator;
+  background-color: #743e8c;
+}
+
+.billIndicator {
+  @extend .keyIndicator;
+  background-color: #0091b1;
+}
+
+.cash {
+  font-size: to-rem(30);
+  font-weight: var(--font-bold);
+}
+
+.buttonClass {
+  font-size: to-rem(13);
+  margin-top: to-rem(30);
+  max-width: to-rem(260);
+}
+
+.linkClass {
+  color: #0f8cff;
+
+  &>svg {
+    vertical-align: middle;
+    margin-right: to-rem(7);
+  }
+}
+
+.textMedium {
+  font-weight: var(--font-medium);
+}
+
+.greyed {
+  color: #748cad;
+}
+
+.borderBottom {
+  border-bottom: to-rem(1) solid #f0f4f9;
+}
+
+.withdraw {
+  &Content {
+    padding: 0;
+  }
+
+  &Header {
+    background-color: #f0f4f9;
+  }
+
+  &Tab {
+    background-color: #f0f4f9;
+    list-style: none;
+    padding: to-rem(0 20);
+    border-top: to-rem(1) solid #dee6f2;
+  }
+
+  &Total {
+    border-bottom: to-rem(1) solid #f0f4f9;
+    color: #efa310;
+    padding: to-rem(20);
+  }
+
+  &Body {
+    padding: to-rem(20);
+  }
+
+  &Action {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.input {
+  background-color: $color-white;
+  border: to-rem(1) solid #d2ddeb;
+  border-radius: to-rem(3);
+  color: $color-black-01;
+}
+
+.submitButton {
+  max-width: initial;
+
+  @include md {
+    max-width: to-rem(194);
+  }
+}
+
+.cancelButton {
+  font-size: to-rem(13);
+  color: #18379a;
+  position: relative;
+  right: to-rem(44);
+
+  &>svg {
+    vertical-align: middle;
+    margin-right: to-rem(10);
+  }
+}
+
+.cashOutHistory {
+  width: 100%;
+  height: 100%;
+
+  &Flex {
+    display: flex;
+    min-height: 80vh;
+    border-radius: to-rem(5);
+    overflow: hidden;
+  }
+}
+
+.list {
+  &Action {
+    width: 100%;
+    background-color: $color-white;
+    padding: to-rem(10 15);
+
+    @include sm {
+      display: flex;
+      flex: 1 1 50%;
+    }
+
+    &>button {
+      display: block;
+      width: 100%;
+    }
+
+    @include md {
+      width: auto;
+      padding: 0;
+      padding: to-rem(10 0);
+
+      div {
+        display: inline-block;
+      }
+    }
+
+    .inviteFilterButton {
+      display: flex;
+      justify-content: space-between;
+      border: 0;
+      border-left: to-rem(1) solid $color-dashboard-bg;
+      background-color: $color-white;
+
+      span {
+        margin-left: to-rem(20);
+      }
+
+      &>svg {
+        path {
+          fill: #748cad;
+        }
+
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &Column {
+    width: 100%;
+    background-color: $color-white;
+    font-size: to-rem(13);
+
+    &Header {
+      border-bottom: to-rem(1) solid #dee6f2;
+      padding: to-rem(0 20);
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex: 1 1 50%;
+    }
+
+    &Content {
+      padding: to-rem(20);
+    }
+  }
+
+  &Title {
+    padding: to-rem(15 0);
+  }
+
+  &Table {
+    thead tr {
+      th:first-child {
+        width: 20%;
+      }
+
+      th:last-child {
+        width: 10%;
+      }
+    }
+
+    .transactionType {
+      text-transform: capitalize;
+    }
+  }
+}
+
+.dateRange {
+  padding-right: to-rem(15);
+  border-right: to-rem(1) solid $color-dashboard-bg;
+
+  &Button {
+    background-color: $color-white;
+    border: 0;
+    padding: to-rem(7 10);
+
+    @include md {
+      border: to-rem(1) solid #d2ddeb;
+      border-radius: to-rem(3);
+    }
+
+    svg {
+      vertical-align: middle;
+      margin-right: to-rem(10);
+    }
+
+    &:hover {
+      border-color: $color-primary-light;
+    }
+  }
+}
+
+.bottomBar {
+  text-align: center;
+  margin-top: to-rem(30);
+}
+
+.viewAll {
+  background-color: $color-white;
+  border: 0;
+  color: #0f8cff;
+
+  &>svg {
+    margin-right: to-rem(10);
+  }
+}
+
+.action {
+  color: #0f8cff;
+  cursor: pointer;
+
+  &>span {
+    font-size: to-rem(13);
+  }
+
+  &>svg {
+    width: to-rem(12);
+    height: torem(12);
+    vertical-align: middle;
+    margin-right: to-rem(5);
+  }
+}
+
+.cashOutList {
+  padding: to-rem(20);
+}
+
+.cashOutCard {
+  background-color: $color-white;
+  margin-bottom: to-rem(20);
+  box-shadow: to-rem(0 5 10) rgba(116, 140, 173, 0.1);
+  border-radius: to-rem(3);
+
+  .row {
+    display: flex;
+    font-size: to-rem(13);
+    padding: to-rem(20);
+    border-bottom: to-rem(1) solid $color-dashboard-bg;
+  }
+
+  .title,
+  .value {
+    width: 50%;
+    word-wrap: break-word;
+  }
+
+  .title {
+    color: $color-gray-02;
+  }
+
+  .value {
+    text-align: right;
+  }
+}
+
+.actionButton {
+  display: block;
+  width: 100%;
+  height: to-rem(46);
+  line-height: to-rem(46);
+  vertical-align: middle;
+  text-align: center;
+  background-color: #f8fbff; //make this a variable for re-usability
+  border: 0;
+  border-radius: to-rem(0 0 3 3);
+  color: #0f8cff;
+
+  svg {
+    transform: translateY(20%);
+    margin-right: to-rem(10);
+  }
+}
+
+.cashOutdetail {
+  .row {
+    display: flex;
+    font-size: to-rem(13);
+    padding: to-rem(20);
+    border-bottom: to-rem(1) solid $color-dashboard-bg;
+
+    @include md {
+      padding: to-rem(20 0);
+    }
+  }
+
+  .title,
+  .value {
+    width: 50%;
+    word-wrap: break-word;
+  }
+
+  .title {
+    color: $color-gray-02;
+    font-weight: 500;
+  }
+
+  .value {
+    text-align: right;
+  }
+}

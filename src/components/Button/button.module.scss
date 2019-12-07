@@ -1,0 +1,23 @@
+@import '../../styles/generic';
+
+.button {
+    height: to-rem(45);
+    width: 100%;
+    background-color: $color-green-light;
+    color: $color-primary;
+    font-size: to-rem(15);
+    text-align: left;
+    border: 0;
+    border-radius: to-rem(30);
+    padding: 0 to-rem(15);
+    position: relative;
+    cursor: pointer;
+    outline: 0;
+
+    &>svg {
+        text-align: right;
+        position: absolute;
+        right: to-rem(15);
+        transform: translateY(15%);
+    }
+}

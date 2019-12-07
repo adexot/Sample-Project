@@ -1,0 +1,26 @@
+@import '../../styles/generic';
+
+.dateRange {
+  padding-right: to-rem(15);
+  border-right: to-rem(1) solid $color-dashboard-bg;
+
+  &Button {
+    background-color: $color-white;
+    border: 0;
+    padding: to-rem(7 10);
+
+    @include md {
+      border: to-rem(1) solid #d2ddeb;
+      border-radius: to-rem(3);
+    }
+
+    svg {
+      vertical-align: middle;
+      margin-right: to-rem(10);
+    }
+
+    &:hover {
+      border-color: $color-primary-light;
+    }
+  }
+}

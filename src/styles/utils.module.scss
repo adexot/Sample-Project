@@ -1,0 +1,10 @@
+@import './generic.scss';
+
+// Define utility styles here
+.showOnMd {
+    display: none;
+
+    @include md {
+        display: block;
+    }
+}

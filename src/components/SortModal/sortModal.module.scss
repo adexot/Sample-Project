@@ -1,0 +1,78 @@
+@import '../../styles/generic';
+
+.flexContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: to-rem(15);
+}
+
+.sortActionItem {
+    font-size: to-rem(14);
+    padding: to-rem(20);
+
+    &:not(:last-child) {
+        border-bottom: to-rem(1) solid #F0F4F9;
+    }
+
+    input[type='radio'] {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    input[type='radio']:checked+label::before {
+        content: url(./check.png);
+        background-color: #0F8CFF;
+        border: to-rem(1) solid #0F8CFF;
+        text-align: center;
+        line-height: to-rem(25);
+    }
+
+    &Label {
+        display: inline-block;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            height: to-rem(25);
+            width: to-rem(25);
+            background-color: #F0F4F9;
+            border: to-rem(1) solid #D2DDEB;
+            border-radius: 50%;
+            vertical-align: middle;
+            margin-right: to-rem(15);
+            transition: background-color .1s linear;
+        }
+    }
+}
+
+.sortModalAction {
+    @extend .flexContainer;
+
+    margin-top: to-rem(30);
+
+    .submitButton {
+        border-radius: to-rem(50);
+        height: to-rem(50);
+        background-color: #00E59E;
+        font-size: to-rem(14);
+        padding: 0 to-rem(15);
+        width: 100%;
+        text-align: left;
+        color: #18379A;
+
+        &>svg {
+            vertical-align: middle;
+            float: right;
+        }
+
+        @include md {
+            width: to-rem(194);
+        }
+    }
+
+    .cancelButton {
+        font-size: to-rem(14);
+        color: #18379A;
+    }
+}

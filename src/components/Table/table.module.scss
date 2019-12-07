@@ -1,0 +1,56 @@
+@import '../../styles/generic.scss';
+
+.table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+
+    th {
+        text-transform: uppercase;
+        font-weight: var(--font-regular);
+        font-size: to-rem(11);
+        color: $color-black-01;
+    }
+
+    tr {
+        height: to-rem(60);
+        color: #7C838D;
+    }
+
+    td,
+    th {
+        padding: to-rem(0 15);
+    }
+
+    tbody tr{
+        td {
+            @extend %tdBorderRadius;
+        }
+
+        &:nth-child(2n+1) {
+            background-color: #FAFAFA;
+        }
+
+        &:hover {
+            background-color: $color-dashboard-bg;
+            border-radius: to-rem(5);
+            color: $color-black-01;
+
+            td {
+                @extend %tdBorderRadius;
+            }
+        }
+    }
+}
+
+%tdBorderRadius {
+    &:first-child{
+        border-top-left-radius: to-rem(3);
+        border-bottom-left-radius: to-rem(3);
+    }
+
+    &:last-child{
+        border-top-right-radius: to-rem(3);
+        border-bottom-right-radius: to-rem(3);
+    }
+}

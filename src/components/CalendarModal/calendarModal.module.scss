@@ -1,0 +1,96 @@
+@import '../../styles/generic';
+
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: to-rem(15);
+}
+
+.bordered {
+  border: to-rem(1) solid #d2ddeb;
+  border-radius: to-rem(3);
+  margin-bottom: to-rem(15);
+}
+
+.block {
+  display: block;
+}
+
+.calendarModal {
+  font-size: to-rem(13);
+
+  @include sm {
+    padding: to-rem(20);
+  }
+
+  &Item {
+    @extend .flexContainer, .bordered;
+  }
+
+  &Label {
+    margin-left: to-rem(10);
+  }
+
+  &Button {
+    & > svg {
+      vertical-align: middle;
+      margin-left: to-rem(20);
+
+      path {
+        fill: #d2ddeb;
+      }
+    }
+  }
+
+  &Action {
+    @extend .flexContainer;
+
+    margin-top: to-rem(30);
+
+    .submitButton {
+      border-radius: to-rem(50);
+      height: to-rem(50);
+      background-color: #00e59e;
+      font-size: to-rem(14);
+      padding: 0 to-rem(15);
+      width: 100%;
+      text-align: left;
+      color: #18379a;
+
+      & > svg {
+        vertical-align: middle;
+        float: right;
+      }
+
+      @include md {
+        width: to-rem(194);
+      }
+    }
+
+    .cancelButton {
+      font-size: to-rem(14);
+      color: #18379a;
+    }
+  }
+}
+
+.subItem {
+  @extend .flexContainer;
+
+  border-top: to-rem(1) solid #f0f4f9;
+
+  & > input {
+    padding: to-rem(10);
+    border-radius: to-rem(3);
+    border: to-rem(1) solid #d2ddeb;
+  }
+}
+
+.arrowDown {
+  transform: rotate(90deg);
+}
+
+.arrowUp {
+  transform: rotate(-90deg);
+}

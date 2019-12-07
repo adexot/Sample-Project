@@ -1,0 +1,548 @@
+@import '../../styles/generic';
+
+.outlet {
+  width: 100%;
+  height: 100%;
+
+  &Flex {
+    display: flex;
+    min-height: 80vh;
+    border-radius: to-rem(5);
+    overflow: hidden;
+  }
+}
+
+.pageTab {
+  display: flex;
+  width: 100%;
+  background-color: $color-primary-dark;
+  padding: to-rem(0 15);
+
+  & > li {
+    width: 50%;
+    text-align: center;
+    color: $color-primary-light;
+    font-size: to-rem(14);
+
+    @include md {
+      width: auto;
+    }
+  }
+
+  .tabItem {
+    color: $color-white;
+    font-size: to-rem(15);
+    width: 100%;
+    text-align: center;
+
+    @include sm {
+      height: to-rem(50);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @include md {
+      color: #223856;
+      font-size: to-rem(12);
+      padding: to-rem(5 10);
+      line-height: to-rem(20);
+      display: inline-block;
+    }
+  }
+
+  .tabActive {
+    @include md {
+      background-color: $color-white;
+      color: #0f8cff;
+      border-radius: to-rem(3);
+      box-shadow: 0px 10px 15px rgba(171, 191, 216, 0.5);
+    }
+
+    @include sm {
+      border-bottom: to-rem(3) solid $color-green-light;
+      color: $color-green-light;
+    }
+  }
+
+  @include md {
+    background-color: #e7eef7;
+    width: auto;
+    padding: to-rem(5);
+  }
+}
+
+.list {
+  &Action {
+    width: 100%;
+    background-color: $color-white;
+    padding: to-rem(15);
+
+    @include sm {
+      display: flex;
+      flex: 1 1 50%;
+    }
+
+    & > button {
+      display: block;
+      width: 100%;
+    }
+
+    @include md {
+      width: auto;
+      padding: 0;
+      padding: to-rem(10 0);
+
+      div {
+        display: inline-block;
+      }
+    }
+
+    &Button {
+      svg {
+        height: to-rem(15);
+        width: to-rem(15);
+        margin-right: to-rem(10);
+        vertical-align: middle;
+      }
+
+      &:not(:last-of-type) {
+        margin-right: to-rem(10);
+      }
+
+      &.fundWalletButton {
+        color: #00c588;
+      }
+
+      &.agentProfileButton {
+        color: #0f8cff;
+
+        svg {
+          path {
+            fill: #0f8cff;
+          }
+        }
+
+        @include sm {
+          border-left: to-rem(1) solid #f0f4f9;
+        }
+      }
+    }
+  }
+
+  &Column {
+    width: 80%;
+    background-color: $color-white;
+    font-size: to-rem(13);
+
+    &Header {
+      border-bottom: to-rem(1) solid #dee6f2;
+      padding: to-rem(0 20);
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex: 1 1 50%;
+    }
+
+    &Content {
+      padding: to-rem(0 20);
+    }
+  }
+
+  &Title {
+    padding: to-rem(15 0);
+  }
+
+  &Table {
+    thead tr {
+      th:first-child {
+        width: 15%;
+      }
+
+      th:last-child {
+        width: 12%;
+      }
+    }
+  }
+}
+
+.ll {
+  @include sm {
+    display: flex;
+
+    button {
+      width: 50%;
+      height: to-rem(55);
+    }
+  }
+}
+
+.action {
+  color: #0f8cff;
+
+  & > span {
+    font-size: to-rem(13);
+  }
+
+  & > svg {
+    width: to-rem(12);
+    height: torem(12);
+    vertical-align: middle;
+    margin-right: to-rem(5);
+  }
+}
+
+.actionButton {
+  display: block;
+  width: 100%;
+  height: to-rem(46);
+  line-height: to-rem(46);
+  vertical-align: middle;
+  text-align: center;
+  background-color: #f8fbff; //make this a variable for re-usability
+  border: 0;
+  border-radius: to-rem(0 0 3 3);
+  color: #0f8cff;
+
+  svg {
+    transform: translateY(20%);
+    margin-right: to-rem(10);
+  }
+}
+
+.agent {
+  &Column {
+    width: to-rem(230);
+    background-color: #e7eef7;
+    font-size: to-rem(13);
+
+    &Header {
+      border-bottom: to-rem(1) solid #dee6f2;
+      text-transform: uppercase;
+    }
+  }
+
+  &SearchInput {
+    background-color: transparent;
+    padding: to-rem(20);
+    border: 0;
+    width: 100%;
+    background: url(./search.png) no-repeat;
+    background-position: center right to-rem(20);
+    outline: none;
+
+    &:not(:placeholder-shown) {
+      background: none;
+    }
+
+    @include sm {
+      color: #748cad;
+      font-size: to-rem(13);
+    }
+  }
+
+  &Info {
+    display: flex;
+    align-items: center;
+    padding: to-rem(0 20);
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f0f6ff;
+    }
+  }
+
+  &Avatar {
+    // width: 25%;
+  }
+
+  &Initials {
+    display: inline-block;
+    height: to-rem(40);
+    width: to-rem(40);
+    background-color: #f0e6b2;
+    border-radius: 50%;
+    margin-right: to-rem(20);
+    text-align: center;
+    vertical-align: middle;
+    line-height: to-rem(40);
+
+    @include md {
+      margin-right: to-rem(15);
+    }
+  }
+
+  &Details {
+    padding: to-rem(15 0);
+    width: 75%;
+    font-size: to-rem(13);
+
+    & > div {
+      margin-bottom: to-rem(10);
+    }
+  }
+
+  &Phone {
+    color: #748cad;
+  }
+}
+
+.linkOutletButton {
+  max-width: to-rem(190);
+  display: block;
+
+  @include md {
+    margin: to-rem(20) auto;
+  }
+}
+
+.dateRange {
+  padding-right: to-rem(15);
+  border-right: to-rem(1) solid $color-dashboard-bg;
+
+  &Button {
+    background-color: $color-white;
+    border: 0;
+    padding: to-rem(7 10);
+
+    @include md {
+      border: to-rem(1) solid #d2ddeb;
+      border-radius: to-rem(3);
+    }
+
+    svg {
+      vertical-align: middle;
+      margin-right: to-rem(10);
+    }
+
+    &:hover {
+      border-color: $color-primary-light;
+    }
+  }
+}
+
+.input {
+  background-color: $color-white;
+  border: to-rem(1) solid #d2ddeb;
+  border-radius: to-rem(3);
+  color: $color-black-01;
+}
+
+.linkOutlet {
+  &Action {
+    display: flex;
+    justify-content: space-between;
+
+    .submitButton {
+      border-radius: to-rem(50);
+      height: to-rem(50);
+      background-color: #00e59e;
+      font-size: to-rem(14);
+      padding: 0 to-rem(15);
+      width: 100%;
+      text-align: left;
+      color: #18379a;
+
+      @include md {
+        width: 50%;
+      }
+
+      & > svg {
+        vertical-align: middle;
+        float: right;
+      }
+
+      @include md {
+        width: to-rem(194);
+      }
+    }
+
+    .cancelButton {
+      font-size: to-rem(14);
+      color: #18379a;
+
+      & > svg {
+        vertical-align: middle;
+        margin-right: to-rem(10);
+      }
+    }
+  }
+
+  &Container {
+    @include sm {
+      padding: to-rem(30 20);
+    }
+  }
+
+  &Image {
+    display: block;
+
+    @include sm {
+      margin: 0 auto;
+    }
+  }
+
+  &Intro {
+    background-color: #748cad;
+    padding: to-rem(15);
+    border-radius: to-rem(5);
+    color: $color-white;
+    font-size: to-rem(13);
+  }
+}
+
+.agentFilterButton {
+  height: to-rem(45);
+  width: 100%;
+  color: $color-primary;
+  font-size: to-rem(15);
+  text-align: left;
+  border: 0;
+  border-radius: to-rem(30);
+  padding: 0 to-rem(15);
+  position: relative;
+  cursor: pointer;
+  outline: 0;
+
+  & > svg {
+    text-align: right;
+    position: absolute;
+    right: to-rem(15);
+    transform: translateY(15%) rotate(90deg);
+  }
+
+  @include sm {
+    padding: to-rem(10);
+    border: to-rem(1) solid #d2ddeb;
+    border-radius: to-rem(3);
+    margin-left: to-rem(25);
+    color: #748cad;
+
+    svg {
+      path {
+        fill: #748cad;
+      }
+    }
+  }
+}
+
+.agentCard {
+  background-color: $color-white;
+  margin-bottom: to-rem(20);
+  box-shadow: to-rem(0 5 10) rgba(116, 140, 173, 0.1);
+  border-radius: to-rem(3);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-row-gap: to-rem(10);
+  font-size: to-rem(13);
+  padding: to-rem(20);
+  border-bottom: to-rem(1) solid $color-dashboard-bg;
+
+  @include md {
+    flex-wrap: wrap;
+    line-height: 2.5;
+    padding: to-rem(0 0 10 0);
+    margin: to-rem(0 0 10 0);
+  }
+}
+
+.title,
+.value {
+  word-wrap: break-word;
+}
+
+.title {
+  color: $color-gray-02;
+}
+
+.value {
+  text-align: right;
+}
+
+.agentListContainer {
+  background-color: #e7eef7;
+  padding: to-rem(20 20 100);
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.cardDate {
+  font-size: to-rem(13);
+  margin-bottom: to-rem(10);
+  color: #748cad;
+}
+
+.modalHeader {
+  background: $color-white;
+  box-shadow: to-rem(0 0 10 0) rgba(0, 0, 0, 0.2);
+}
+
+.walletBalanceContainer {
+  padding: to-rem(17) 0;
+  text-align: center;
+  background-color: #fff7e4;
+  color: #223856;
+  border-radius: to-rem(3);
+  margin: to-rem(20) 0;
+  text-transform: uppercase;
+  font-weight: var(--font-medium);
+}
+
+.fundWallet {
+  &Header {
+    background-color: #f0f4f9;
+  }
+
+  &Content {
+    padding: 0;
+  }
+
+  &Balance {
+    border-bottom: to-rem(1) solid #f0f4f9;
+    color: #efa310;
+    padding: to-rem(30 50 20);
+  }
+
+  &Tab {
+    background-color: #f0f4f9;
+    list-style: none;
+    padding: to-rem(0 30);
+    border-top: to-rem(1) solid #dee6f2;
+  }
+
+  &Body {
+    padding: to-rem(20 50);
+  }
+
+  &Action {
+    display: flex;
+    justify-content: space-between;
+    margin-top: to-rem(30);
+  }
+}
+
+.topup {
+  text-align: center;
+  margin-top: to-rem(100);
+
+  .continueButton {
+    background-color: transparent;
+    border: to-rem(1) solid #18379a;
+    max-width: to-rem(150);
+    margin-top: to-rem(30);
+  }
+
+  &Header {
+    color: #18379a;
+    margin-top: to-rem(50);
+    font-size: to-rem(25);
+  }
+
+  &Content {
+    font-size: to-rem(15);
+  }
+}

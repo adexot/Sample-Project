@@ -1,0 +1,174 @@
+@import '../../styles/generic';
+
+.modal {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  z-index: 99;
+
+  &BackDrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  &Header {
+    font-size: to-rem(25);
+    color: #131415;
+    padding: to-rem(35 0 20 50);
+    background-color: $color-dashboard-bg;
+    top: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+
+    @include sm {
+      padding: to-rem(20);
+    }
+
+    @include sm {
+      font-size: to-rem(20);
+      text-align: center;
+      padding-top: to-rem(20);
+
+      svg {
+        path {
+          fill: #223856;
+        }
+      }
+    }
+  }
+
+  &Footer {
+    padding: to-rem(20 50);
+
+    .cancelButton {
+      color: #18379a;
+      font-size: to-rem(14);
+
+      &>svg {
+        height: to-rwm(15);
+        width: to-rwm(15);
+        margin-right: to-rem(10);
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.mobileModal {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $color-white;
+
+  &Content {
+    overflow: auto;
+  }
+}
+
+.mobileModal,
+.desktopModal {
+  display: grid;
+  grid-template-rows: max-content 1fr auto;
+}
+
+.desktopModal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40%;
+  max-width: to-rem(500);
+  background-color: $color-white;
+  overflow-y: auto;
+
+  @include sm {
+    width: 100%;
+  }
+
+  &Content {
+    // padding: to-rem(30 20);
+
+    @include md {
+      padding: to-rem(20 50);
+      overflow: auto;
+    }
+  }
+
+  .modalHeader {}
+}
+
+.center {
+  left: 50%;
+  top: 50%;
+  bottom: unset;
+  transform: translate(-50%, -50%);
+  border-radius: to-rem(5);
+  overflow: hidden;
+  min-height: to-rem(70vh);
+}
+
+
+.filterModal {
+  height: max-content;
+  position: absolute;
+  background: $color-white;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  min-height: to-rem(310);
+  border-top-left-radius: to-rem(15);
+  border-top-right-radius: to-rem(15);
+  padding-top: to-rem(30);
+
+  &::before {
+    content: '';
+    width: to-rem(50);
+    height: to-rem(5);
+    background-color: #dee6f2;
+    display: inline-block;
+    position: absolute;
+    top: to-rem(15);
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: to-rem(10);
+  }
+
+  .modalHeader {
+    position: absolute;
+    width: 100%;
+    top: - to-rem(60);
+    background: transparent;
+    color: $color-white;
+    grid-template-columns: 1fr auto;
+
+    svg {
+      order: 2;
+
+      path {
+        fill: $color-white;
+      }
+    }
+  }
+}
+
+.introModal {
+  position: absolute;
+  background: $color-white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+
+  .modalHeader {
+    display: none;
+  }
+}

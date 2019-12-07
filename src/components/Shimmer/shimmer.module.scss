@@ -1,0 +1,82 @@
+@import '../../styles/generic';
+
+%borderRRadius {
+  border-radius: 8px;
+}
+
+.circle {
+  @extend %animate;
+
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+}
+
+.line {
+  @extend %borderRRadius, %animate;
+
+  height: to-rem(10);
+  background-color: #e6e6e6;
+}
+
+.lightColor {
+  background-color: #f2f2f2;
+}
+
+%animate {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%);
+  background-size: 1000px 100%;
+}
+
+@keyframes fullView {
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  td,
+  th {
+    padding: to-rem(15);
+  }
+
+  tbody tr {
+    &:nth-child(2n + 1) {
+      background-color: #fafafa;
+    }
+  }
+}
+
+.card {
+  background-color: $color-white;
+  margin-bottom: to-rem(20);
+  box-shadow: to-rem(0 5 10) rgba(116, 140, 173, 0.1);
+  border-radius: to-rem(3);
+
+  .row {
+    display: flex;
+    font-size: to-rem(13);
+    padding: to-rem(20);
+    border-bottom: to-rem(1) solid $color-dashboard-bg;
+  }
+
+  .title,
+  .value {
+    width: 50%;
+    word-wrap: break-word;
+  }
+}
